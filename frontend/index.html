@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PromptOps 评测与优化平台</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">作品集项目 2</p>
+        <h1>PromptOps 评测与优化平台</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="danger-button" id="reset-demo-button" type="button">重置演示数据</button>
+        <button class="primary-button" id="run-button" type="button">运行 Mock 批量测试</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="metrics-grid" aria-label="运行指标">
+        <article class="metric">
+          <span>运行次数</span>
+          <strong id="total-runs">--</strong>
+        </article>
+        <article class="metric">
+          <span>平均得分</span>
+          <strong id="average-score">--</strong>
+        </article>
+        <article class="metric">
+          <span>失败率</span>
+          <strong id="failure-rate">--</strong>
+        </article>
+        <article class="metric">
+          <span>总成本</span>
+          <strong id="total-cost">--</strong>
+        </article>
+        <article class="metric">
+          <span>平均耗时</span>
+          <strong id="average-latency">--</strong>
+        </article>
+      </section>
+
+      <p class="status-message" id="status-message" role="status">正在加载仪表盘...</p>
+
+      <section class="workflow">
+        <h2>评测流程</h2>
+        <div class="steps">
+          <span>Prompt 版本</span>
+          <span>测试集</span>
+          <span>批量运行</span>
+          <span>自动评分</span>
+          <span>失败复盘</span>
+          <span>优化迭代</span>
+        </div>
+      </section>
+
+      <section class="columns">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Prompt 版本管理</h2>
+            <button class="secondary-button" id="new-prompt-button" type="button">新建版本</button>
+          </div>
+          <form class="form-grid" id="prompt-form">
+            <input id="prompt-id" type="hidden" />
+            <label>
+              版本名称
+              <input id="prompt-label" required value="v2" />
+            </label>
+            <label>
+              修改说明
+              <input id="prompt-note" required value="增加回答格式约束" />
+            </label>
+            <label class="full-span">
+              Prompt 内容
+              <textarea id="prompt-content" required rows="5">你是一名专业的客服助手。请用三点回答用户问题：{{user_input}}</textarea>
+            </label>
+            <button class="primary-button" type="submit">保存 Prompt 版本</button>
+          </form>
+          <label class="select-label">
+            本次运行使用的 Prompt 版本
+            <select id="prompt-version-select"></select>
+          </label>
+          <div class="list-stack" id="prompt-version-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>测试用例管理</h2>
+            <button class="secondary-button" id="new-case-button" type="button">新建用例</button>
+          </div>
+          <form class="form-grid" id="case-form">
+            <input id="case-id" type="hidden" />
+            <label class="full-span">
+              用户问题
+              <input id="case-input" required value="如何修改账号绑定手机号？" />
+            </label>
+            <label class="full-span">
+              期望关键词
+              <input id="case-keywords" required value="账号,手机号,验证" />
+            </label>
+            <button class="primary-button" type="submit">保存测试用例</button>
+          </form>
+          <div class="list-stack" id="test-case-list"></div>
+        </article>
+      </section>
+
+      <section class="columns">
+        <article class="panel">
+          <h2>批量运行结果</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>测试用例</th>
+                <th>自动评分</th>
+                <th>状态</th>
+                <th>人工评分</th>
+                <th>人工备注</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="results-body">
+              <tr>
+                <td colspan="6">还没有运行批量测试。</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <h2>失败案例</h2>
+          <div class="failure-stack" id="failure-list">
+            <p class="label">当前没有失败案例。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="columns">
+        <article class="panel">
+          <h2>当前 Prompt 预览</h2>
+          <p class="label" id="prompt-preview-label">尚未选择版本</p>
+          <pre id="prompt-preview">正在加载...</pre>
+        </article>
+
+        <article class="panel">
+          <h2>版本对比</h2>
+          <div id="version-comparison-list">
+            <p class="label">正在加载版本对比...</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
