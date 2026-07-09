@@ -2,11 +2,11 @@
 
 ## Goal
 
-Build a small PromptOps platform for portfolio demonstration. The platform helps users manage prompt templates, run prompts against test cases, score model outputs, review failure cases, compare prompt versions, and track cost and latency.
+Build a small PromptOps platform for technical demonstration. The platform helps users manage prompt templates, run prompts against test cases, score model outputs, review failure cases, compare prompt versions, and track cost and latency.
 
 ## Audience
 
-The project is aimed at HR screeners and technical interviewers for Prompt Engineer, AI Product Engineer, AI Agent Optimization, and junior AI application developer roles.
+The project is aimed at demonstrating PromptOps workflow design, AI output evaluation, backend API design, frontend integration, and repeatable local execution.
 
 ## MVP Scope
 
@@ -57,7 +57,7 @@ The first scoring rule is keyword-based:
 - A case passes when the score is at least 0.7.
 - A case below 0.7 becomes a failure case.
 
-This is simple enough for a beginner and clear enough for interviews. Later versions can add LLM-as-judge scoring.
+This is simple enough to run locally and clear enough to explain as a technical system. Later versions can add LLM-as-judge scoring.
 
 ## Architecture
 
@@ -80,4 +80,3 @@ The first day focuses on application services because they are easy to test and 
 - Demo video script
 - Resume project description
 - Interview explanation notes
-

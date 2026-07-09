@@ -1,31 +1,31 @@
 # PromptOps 评测与 Prompt 优化平台
 
-这是一个面向 Prompt 工程师、AI Agent 效果优化、AI 产品研发岗位的作品集项目。
+这是一个用于展示 Prompt 工程化能力的小型平台。它把 Prompt 从一段临时文本，整理成可以版本管理、批量评测、评分复盘、失败分析和持续优化的工程资产。
 
-项目核心不是“调用一次大模型”，而是把 Prompt 当成可以测试、评分、复盘、对比和持续优化的工程资产来管理。
+项目重点不是“调用一次大模型接口”，而是演示一套可复现的 PromptOps 工作流：如何管理 Prompt 版本，如何维护测试集，如何批量运行评测，如何记录模型输出，如何结合自动评分和人工复核判断 Prompt 效果。
 
 ## 项目价值
 
-很多 AI Demo 只展示一次成功回答，但真实工作里更重要的是：
+很多 AI Demo 只展示一次成功回答，但真实工程里更重要的是稳定评估和持续改进：
 
 ```text
 Prompt 版本 -> 测试集 -> 批量运行 -> 模型输出 -> 自动评分 -> 人工复核 -> 失败分析 -> Prompt 优化
 ```
 
-这个项目展示的是 Prompt 工程化能力：如何管理版本、如何批量评测、如何发现失败案例、如何证明新 Prompt 是否真的更好。
+这个项目展示的是 Prompt 工程化能力：如何管理版本、如何批量评测、如何发现失败案例、如何用数据证明新 Prompt 是否真的更好。
 
 ## 核心功能
 
 - Prompt 版本管理：新增、编辑、选择不同 Prompt 版本运行评测。
 - 测试用例管理：新增、编辑测试问题和期望关键词。
-- Mock 模型模式：无 API Key 也能完整演示。
-- 批量运行测试：一键用指定 Prompt 跑完整测试集。
+- Mock 模型模式：无 API Key 也能完整运行和演示。
+- 批量运行测试：一键使用指定 Prompt 跑完整测试集。
 - 自动评分：基于期望关键词命中率计算得分和通过状态。
 - 人工评分：对每条模型输出补充人工分数和复核备注。
 - 失败案例分析：记录失败问题、模型输出、严重程度、失败原因和优化建议。
 - Prompt 版本对比：基于真实历史运行记录统计平均分、失败率、成本和耗时。
 - 成本和耗时统计：展示总成本、平均耗时等运行指标。
-- 一键重置演示数据：方便录屏、面试和 HR 展示。
+- 一键重置演示数据：方便重新回到干净的项目演示状态。
 
 ## 技术栈
 
@@ -54,8 +54,9 @@ docs/
   architecture_diagram.md
   demo_script.md
   final_checklist.md
-  interview_guide.md
-  resume_project.md
+  project_summary.md
+  showcase_package.md
+  technical_walkthrough.md
   screenshots/
 ```
 
@@ -100,14 +101,14 @@ http://127.0.0.1:8001/
 ## 推荐演示流程
 
 1. 点击 `重置演示数据`，恢复干净演示状态。
-2. 展示仪表盘指标：运行次数、平均得分、失败率、成本、耗时。
-3. 展示 Prompt 版本管理，说明 Prompt 像代码一样需要版本管理。
-4. 展示测试用例管理，说明测试集用来验证 Prompt 是否稳定。
+2. 查看仪表盘指标：运行次数、平均得分、失败率、成本、耗时。
+3. 查看 Prompt 版本管理，说明 Prompt 像代码一样需要版本管理。
+4. 查看测试用例管理，说明测试集用于验证 Prompt 是否稳定。
 5. 点击 `运行 Mock 批量测试`，查看自动评分结果。
 6. 对一条输出填写人工评分和复核备注。
 7. 新增一个以 `故意失败` 开头的测试用例，触发失败分析。
-8. 查看失败案例卡片，解释失败原因和优化建议。
-9. 查看版本对比，说明如何证明 Prompt 版本是否变好。
+8. 查看失败案例卡片，观察失败原因和优化建议。
+9. 查看版本对比，观察不同 Prompt 版本在真实运行记录中的表现差异。
 
 ## 功能截图
 
@@ -145,15 +146,15 @@ http://127.0.0.1:8001/
 | GET | `/api/prompt-version-comparison` | Prompt 版本对比 |
 | POST | `/api/demo/reset` | 重置演示数据 |
 
-## 作品集材料
+## 技术展示材料
 
 - 架构说明：[docs/architecture.md](docs/architecture.md)
 - 架构图：[docs/architecture_diagram.md](docs/architecture_diagram.md)
-- 演示视频脚本：[docs/demo_script.md](docs/demo_script.md)
-- 简历项目描述：[docs/resume_project.md](docs/resume_project.md)
-- 面试讲解稿：[docs/interview_guide.md](docs/interview_guide.md)
+- 演示脚本：[docs/demo_script.md](docs/demo_script.md)
+- 项目说明：[docs/project_summary.md](docs/project_summary.md)
+- 技术讲解：[docs/technical_walkthrough.md](docs/technical_walkthrough.md)
 - 最终检查清单：[docs/final_checklist.md](docs/final_checklist.md)
-- 作品集交付包：[docs/portfolio_package.md](docs/portfolio_package.md)
+- 展示材料包：[docs/showcase_package.md](docs/showcase_package.md)
 - 截图说明：[docs/screenshots/README.md](docs/screenshots/README.md)
 
 ## 当前测试结果

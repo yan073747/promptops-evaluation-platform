@@ -85,7 +85,7 @@ The frontend displays these as analysis cards so reviewers can see what failed, 
 
 ## Demo Reset Flow
 
-The reset action clears runtime tables and restores seed data. It is meant for repeatable portfolio demos and screen recordings.
+The reset action clears runtime tables and restores seed data. It is meant for repeatable technical demos, local verification, and screen recordings.
 
 Reset clears:
 

@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart TD
-    A["用户 / 面试官"] --> B["前端页面 HTML/CSS/JS"]
+    A["用户 / 评审者"] --> B["前端页面 HTML/CSS/JS"]
     B --> C["FastAPI 路由层"]
     C --> D["Prompt 版本管理"]
     C --> E["测试用例管理"]
@@ -48,4 +48,3 @@ sequenceDiagram
     UI->>API: PUT /api/model-outputs/{id}/human-review
     API->>DB: 保存人工评分和备注
 ```
-

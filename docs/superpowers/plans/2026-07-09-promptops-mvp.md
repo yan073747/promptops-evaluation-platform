@@ -62,7 +62,7 @@
 
 **Interfaces:**
 - Consumes: static sample metrics matching backend concepts.
-- Produces: HR-facing first screen explaining the workflow visually.
+- Produces: a clear first screen explaining the workflow visually.
 
 - [ ] **Step 1: Create a dashboard-first static page**
 - [x] **Step 1: Create a dashboard-first static page**
@@ -75,12 +75,12 @@
 - Modify: `README.md`
 - Create: `docs/architecture.md`
 - Create: `docs/demo_script.md`
-- Create: `docs/resume_project.md`
+- Create: `docs/project_summary.md`
 
 **Interfaces:**
 - Consumes: implemented MVP behavior and product design.
-- Produces: materials for GitHub, screenshots, resume, and interview explanation.
+- Produces: materials for GitHub, screenshots, project explanation, and technical walkthrough.
 
 - [x] **Step 1: Document architecture**
 - [x] **Step 2: Write demo script**
-- [x] **Step 3: Write resume and interview notes**
+- [x] **Step 3: Write project summary and technical notes**
