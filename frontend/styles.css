@@ -541,7 +541,9 @@ pre {
 }
 
 .table-wrap {
+  max-width: 100%;
   overflow-x: auto;
+  width: 100%;
 }
 
 table {
@@ -692,7 +694,35 @@ td .review-note {
   }
 
   .shell-header {
+    align-items: center;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto minmax(0, 1fr);
     padding-inline: 14px;
+  }
+
+  .back-link {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand > span {
+    min-width: 0;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .brand strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .header-actions,
@@ -707,7 +737,17 @@ td .review-note {
 
   .header-actions,
   .top-nav {
+    grid-column: 1 / -1;
     display: grid;
+  }
+
+  .top-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .header-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .button,
@@ -722,8 +762,17 @@ td .review-note {
     display: grid;
   }
 
+  .panel {
+    overflow: hidden;
+  }
+
+  .table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   h1 {
-    font-size: 42px;
+    font-size: 32px;
     overflow: visible;
     text-overflow: clip;
     white-space: normal;
